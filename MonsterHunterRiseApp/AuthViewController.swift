@@ -4,16 +4,29 @@ import FirebaseAuth
 class AuthViewController: UIViewController {
     
     //Basic login with FB
+    
+    @IBOutlet weak var authStachView: UIStackView!
     @IBOutlet weak var loginFireBase: UILabel!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var signUp: UIButton!
     @IBOutlet weak var signIn: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Authentication"
+        
+        //comprobar autentificacion
+        let defaults  = UserDefaults.standard
+        if let email = defaults.value(forKey: "email") as? String,
+           let provider = defaults.value(forKey: "provider") as? String{
+            
+            authStachView.isHidden = true
+            
+            navigationController?.pushViewController(HomeViewController(email: email, provider: ProviderType.init(rawValue: provider)!), animated: true)
+        }
         
     }
     
@@ -69,4 +82,7 @@ class AuthViewController: UIViewController {
         }
     }
     
+    @IBAction func googleButtonAction(_ sender: Any) {
+        
+    }
 }

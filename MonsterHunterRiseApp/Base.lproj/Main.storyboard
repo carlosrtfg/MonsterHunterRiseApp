@@ -78,6 +78,9 @@
                                             </backgroundConfiguration>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="googleButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEq-bp-5J8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="tintColor" systemColor="labelColor"/>
@@ -93,6 +96,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FJe-hY-Ldi"/>
                     <connections>
+                        <outlet property="authStachView" destination="850-nD-NhZ" id="Z66-qV-P2w"/>
                         <outlet property="email" destination="y3T-sd-reS" id="9hd-8a-Gmq"/>
                         <outlet property="loginFireBase" destination="bAL-LF-LHj" id="xBk-tJ-nna"/>
                         <outlet property="password" destination="wIB-Df-5hD" id="PTr-e2-YRg"/>

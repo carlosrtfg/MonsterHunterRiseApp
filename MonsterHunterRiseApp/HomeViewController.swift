@@ -28,9 +28,20 @@ class HomeViewController: UIViewController {
 
         title = "validacion"
         
-        
+        navigationItem.setHidesBackButton(true, animated: false)
       
         emailLabel.text = email
         providerLabel.text = provider.rawValue
+        
+      
     }
 }
+
+/*
+ para el boton de cerrar sesion
+ 
+ let defaults = UserDefaults.standard
+ defaults.set(email, forKey: "email")
+ defaults.set(provider.rawValue, forKey: "provider")
+ defaults.synchronize()
+ */
