@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "monster_hunter_rise_icon_ico_by_hatemtiger_dfoc3ig.png",
+      "filename" : "Icon-App-40x40@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Icon-App-29x29@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Icon-App-29x29@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

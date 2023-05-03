@@ -12,11 +12,11 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "Authentication"
         
     }
-
+    
     @IBAction func signUpButtonAction(_ sender: Any) {
         
         if let emailt = email.text, let passswordt = password.text {
@@ -27,13 +27,15 @@ class AuthViewController: UIViewController {
                 if let result = result, error == nil {
                     
                     self.navigationController?
-                        .pushViewController(HomeViewController(email:
-                        result.user.email!, provider: .basic), animated: true)
+                        .pushViewController(HomeViewController(
+                            email: result.user.email!,
+                            provider: .basic),
+                                            animated: true)
                     
                 } else {
                     let alertController = UIAlertController(title: "error",
-                    message: "se a producido un error registrando el usuario",
-                    preferredStyle: .alert)
+                                                            message: "se a producido un error registrando el usuario",
+                                                            preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "aceptar", style: .default))
                     self.present(alertController, animated: true, completion: nil)
                 }
@@ -42,6 +44,7 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func signInButtonAction(_ sender: Any) {
+        
         if let emailt = email.text, let passswordt = password.text {
             
             Auth.auth().signIn(withEmail: emailt, password: passswordt) {
@@ -50,13 +53,15 @@ class AuthViewController: UIViewController {
                 if let result = result, error == nil {
                     
                     self.navigationController?
-                        .pushViewController(HomeViewController(email:
-                        result.user.email!, provider: .basic), animated: true)
+                        .pushViewController(HomeViewController(
+                            email: result.user.email!,
+                            provider: .basic),
+                                            animated: true)
                     
                 } else {
                     let alertController = UIAlertController(title: "error",
-                    message: "se a producido un error registrando el usuario",
-                    preferredStyle: .alert)
+                                                            message: "se a producido un error registrando el usuario",
+                                                            preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "aceptar", style: .default))
                     self.present(alertController, animated: true, completion: nil)
                 }

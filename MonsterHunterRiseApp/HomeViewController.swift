@@ -1,56 +1,36 @@
-//
-//  HomeViewController.swift
-//  MonsterHunterRiseApp
-//
-//  Created by Carlos Rodriguez toledo on 3/5/23.
-//
-
 import UIKit
 
 enum ProviderType: String {
     case basic
+    case google
 }
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var providerLabel: UILabel!
     
-    @IBOutlet weak var mailLabel: UILabel!
-    @IBOutlet weak var proLabel: UILabel!
+    public let email: String
+    public let provider: ProviderType
     
-    
-    private let email: String
-    private let provider: ProviderType
-    
-    init(email: String, provider: ProviderType) {
+    init(email: String, provider: ProviderType){
         self.email = email
         self.provider = provider
-        super.init(nibName: "HomeViewController", bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-           guard let email = aDecoder.decodeObject(forKey: "email") as? String,
-                 let providerRawValue = aDecoder.decodeObject(forKey: "provider") as? String,
-                 let provider = ProviderType(rawValue: providerRawValue)
-           else {
-               return nil
-           }
-           self.email = email
-           self.provider = provider
-           super.init(coder: aDecoder)
-       }
-
-    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "hola"
-        
-        
 
+        title = "validacion"
         
-
+        
+      
+        emailLabel.text = email
+        providerLabel.text = provider.rawValue
     }
-    
-
 }
